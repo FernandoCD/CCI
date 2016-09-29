@@ -85,9 +85,12 @@ int main() {
 	return *s - *t;
 }*/
 
-int getline (char *s) {
-
-}
+/*int getline (char *s) {
+	int i = 0;
+	while (*s != \0)
+		s++;
+	return i
+}*/
 
 /*int atoi (char *s) {
 	int n;
