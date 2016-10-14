@@ -9,7 +9,7 @@ struct node *build (int x);
 void printlist (struct node *head);
 struct node *dele (struct node *head, int ele);
 
-void addbeg(struct node **head, int x, int p);
+struct node *addbeg(struct node *head, int x, int p);
 struct node *addpos(struct node *s, int x, int p);
 					
 void concat(struct node **a, struct node **b);
@@ -20,14 +20,14 @@ int main() {
 	
 	head = build(3);
 
-	addbeg(&head, 2, 0);
-	addbeg(&head, 1, 0);
+	head = addbeg(head, 2, 0);
+	head = addbeg(head, 1, 0);
 	head = addpos(head,5,2);
 	
 	head2 = build(6);
 	
-	addbeg(&head2, 5, 0);
-	addbeg(&head2, 4, 0);
+	head2 = addbeg(head2, 5, 0);
+	head2 =addbeg(head2, 4, 0);
 	
 	/*head = dele(head, 1);*/
 	
@@ -78,13 +78,14 @@ struct node *dele(struct node *head, int ele){
 	return head;
 }
 
-void addbeg(struct node **head, int x, int p){
+struct node *addbeg(struct node *head, int x, int p){
 	struct node *a;
 	a = build(x);
 	
 	if (p == 0){
-		a -> next = *head;
-		*head = a;
+		a -> next = head;
+		head = a;
+	return head;
 	}
 }
 
