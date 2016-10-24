@@ -23,11 +23,11 @@ void VectorArray::push_back(const Vector &v1){
 	int s = len + 1, i;
 	for(i = 0; i < s; i++)
 		vs[i] = v[i];
-		delete[] v;
-		len = s;
-		v = vs;
+	delete[] v;
+	len = s;
+	v = vs;
 		
-		v[len - 1] = v1;
+	v[len - 1] = v1;
 }
 
 void VectorArray::insert(const int pos, const Vector &v1){
@@ -35,13 +35,13 @@ void VectorArray::insert(const int pos, const Vector &v1){
 	int s = len + 1, i;
 	for(i = 0; i < s; i++)
 		vs[i] = v[i];
-		delete[] v;
-		len = s;
-		v = vs;
-		
-		for(i = len; i > pos; i--)
-			v[i] = v[i - 1];
-			v[pos] = v1;
+	delete[] v;
+	len = s;
+	v = vs;
+	
+	for(i = len; i > pos; i--)
+		v[i] = v[i - 1];
+	v[pos] = v1;
 }
 
 void VectorArray::remove(const int pos){
@@ -49,12 +49,11 @@ void VectorArray::remove(const int pos){
 	int s = len - 1, i;
 	for(i = pos; i < len ; i++)
 		v[i] = v[i+1];
-		
 	for(i = 0; i < s; i++)
 		vs[i] = v[i];
-		delete[] v;
-		len = s;
-		v = vs;
+	delete[] v;
+	len = s;
+	v = vs;
 }
 
 const int VectorArray::getSize() const{
