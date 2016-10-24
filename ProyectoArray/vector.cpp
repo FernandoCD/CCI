@@ -4,7 +4,7 @@ using namespace std;
 
 Vector::Vector(){
 	start.modify(0.0, 0.0);
-	start.modify(0.0, 0.0);
+	end.modify(0.0, 0.0);
 }
 
 Vector::Vector(Point start1, Point end1){
