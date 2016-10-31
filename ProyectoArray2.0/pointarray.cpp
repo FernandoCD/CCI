@@ -60,6 +60,18 @@ void PointArray::clear(){
 	resize(0);
 }
 
+Point *PointArray::get(const int pos){
+	if (pos < len)
+		return p + pos;
+	return NULL;
+}
+
+const Point *PointArray::get(const int pos) const{
+	if (pos < len)
+		return p + pos;
+	return NULL;
+}
+
 void PointArray::printf(){
 	int i;
 	for(i = 0; i < len; i++)

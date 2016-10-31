@@ -14,6 +14,8 @@ public:
 	void remove(const int pos);
 	const int getSize() const;
 	void clear();
+	Point *get(const int pos);
+	const Point *get(const int pos) const;
 	void printf();
 	
 private:

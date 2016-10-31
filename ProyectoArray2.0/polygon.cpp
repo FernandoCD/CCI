@@ -2,18 +2,28 @@
 #include<iostream>
 using namespace std;
 
-Polygon::Polygon(const Point p1[], const int size){
-	
+int Polygon::num = 0;
+
+Polygon::Polygon(const Point p1[], const int size) : p(p1, size){
+	num++;
 }
 
-double Polygon::area(){
-	
+Polygon::Polygon(const PointArray &p1) : p(p1){
+	num++;
+}
+
+Polygon::~Polygon(){
+	num--;
 }
 
 int Polygon::getNumPolygons(){
-	
+	return num;
 }
 
-int Polygon::getNumSides(){
+const int Polygon::getNumSides() const{
 	return p.getSize();
+}
+
+const PointArray *Polygon::getPoints(){
+	return &p;
 }

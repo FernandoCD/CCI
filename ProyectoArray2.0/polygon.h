@@ -9,12 +9,13 @@ protected:
 	
 public:
 	Polygon(const Point p1[], const int size);
+	Polygon(const PointArray &p1);
+	~Polygon();
 	
-	virtual double area();
+	virtual double area() = 0;
 	static int getNumPolygons();
-	int getNumSides();
-//	getPoints(); Devuelve un puntero no se puede modificar a la 
-//	PointArray del Polígono.
+	const int getNumSides() const ;				
+	const PointArray *getPoints();
 };
 
 #endif
