@@ -83,7 +83,7 @@ void del(struct node **head, int ele){
 			cur = cur -> next;
 		}
 		if(cur == NULL)
-			printf("No se encuentra el número %d \n", ele);
+			printf("No se encuentra el nÃºmero %d \n", ele);
 	}
 }
 
@@ -104,27 +104,15 @@ void addbeg(struct node **head, int x){
 
 void addmid(struct node **head, int x) {
 	struct node *a, *b = *head;
-	int i = 0;
+	int i = 0, j = len(*head)/2;
 	a = build(x);
-	if ((len(*head)%2 == 0)) {
-		while (b != NULL && i < (len(*head)/2)){
-			if (i+1 == (len(*head)/2)){
-				a -> next = b -> next;
-				b -> next = a;
-			}
-			i++;
-			b = b -> next;
+	while (b != NULL && i < j){
+		if (i+1 == j/2)){				
+			a -> next = b -> next;
+			b -> next = a;
 		}
-	}
-	else{
-		while (b -> next != NULL && i < ((len(*head)+1) / 2)){
-			if (i+1 == ((len(*head)/2) + 1)){
-				a -> next = b -> next;
-				b -> next = a;
-			}
-			i++;
-			b = b -> next;
-		}
+		i++;
+		b = b -> next;
 	}
 }
 
