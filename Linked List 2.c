@@ -107,7 +107,7 @@ void addmid(struct node **head, int x) {
 	int i = 0, j = len(*head)/2;
 	a = build(x);
 	while (b != NULL && i < j){
-		if (i+1 == j/2)){				
+		if (i+1 == j)){				
 			a -> next = b -> next;
 			b -> next = a;
 		}
